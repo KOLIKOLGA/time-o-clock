@@ -16,7 +16,7 @@ const timeDate = () => {
     };
     const currentDate = date.toLocaleDateString("ru-RU", options);
     dateDate.textContent = currentDate;
-    setTimeout(showDate, 1000);
+    setInterval(showDate, 500);
   }
   showDate();
 };
@@ -64,7 +64,7 @@ const updateTimer = () => {
     "часов",
   ]);
 
-  setTimeout(updateTimer, 1000);
+  setInterval(updateTimer, 500);
 };
 updateTimer();
 
@@ -82,6 +82,6 @@ function formatTime(d) {
   const currentTime = `${day}.${month}.${year} - ${h}:${m}:${s}`;
   date1.textContent = currentTime;
 
-  setTimeout(formatTime, 1000);
+  setInterval(formatTime, 500);
 }
 formatTime();
