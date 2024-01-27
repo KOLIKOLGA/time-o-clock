@@ -6,21 +6,18 @@ const date1 = document.querySelector(".date1");
 const timeDate = () => {
   const dateDate = document.querySelector(".date");
 
-  function showDate() {
-    const date = new Date();
-    const options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    };
-    const currentDate = date.toLocaleDateString("ru-RU", options);
-    dateDate.textContent = currentDate;
-    setInterval(showDate, 500);
-  }
-  showDate();
+  const date = new Date();
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const currentDate = date.toLocaleDateString("ru-RU", options);
+  dateDate.textContent = currentDate;
 };
 timeDate();
+setInterval(timeDate, 1000);
 
 const numWord = (value, words) => {
   value = Math.abs(value) % 100;
@@ -63,10 +60,9 @@ const updateTimer = () => {
     "часа",
     "часов",
   ]);
-
-  setInterval(updateTimer, 500);
 };
 updateTimer();
+setInterval(updateTimer, 1000);
 
 let d;
 function formatTime(d) {
@@ -81,7 +77,6 @@ function formatTime(d) {
   const s = d.getSeconds().toString().padStart(2, "0");
   const currentTime = `${day}.${month}.${year} - ${h}:${m}:${s}`;
   date1.textContent = currentTime;
-
-  setInterval(formatTime, 500);
 }
 formatTime();
+setInterval(formatTime, 1000);
